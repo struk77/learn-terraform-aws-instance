@@ -13,6 +13,6 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-0c960b947cbb2dd16"
+  ami           = "${data.aws_ami.latest_ubuntu.id}"
   instance_type = "t2.micro"
 }
