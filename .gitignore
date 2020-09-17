@@ -1,3 +1,4 @@
 /.terraform
+/.history
 /terraform.tfstate.backup
 /terraform.tfstate
