@@ -2,3 +2,5 @@
 /.history
 /terraform.tfstate.backup
 /terraform.tfstate
+/roles
+/backup
