@@ -7,7 +7,7 @@
         update_cache: yes
       tags:
         - system
-     
+
     # Import docker tasks
     - name: Import docker tasks
       include_tasks: docker.yml
