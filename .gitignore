@@ -1,6 +1,8 @@
 /.terraform
 /.history
-/terraform.tfstate.backup
 /terraform.tfstate
 /roles
 /backup
+*.backup
+*.info
+site.retry
