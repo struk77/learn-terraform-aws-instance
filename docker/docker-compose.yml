@@ -2,7 +2,7 @@ version: '3'
  
 services:
     nginx_img:
-        container_name: www_example_img
+        container_name: www_img
         ports: 
             - "80:80"
         build:
