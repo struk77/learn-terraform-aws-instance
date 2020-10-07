@@ -1,15 +1,23 @@
 version: '3'
  
-services:
-    nginx_img:
-        container_name: www_img
-        ports: 
-            - "80:80"
+# services:
+#     nginx_img:
+#         container_name: www_img
+#         ports: 
+#             - "80:80"
+#         build:
+#             context: ./nginx
+#         # networks:
+#         #     public_net:
+#         #         ipv4_address: ${NGINX_IP}
+
+services: 
+    flask_img:
+        container_name: flask_app
+        ports:
+            - "80:5000"
         build:
-            context: ./nginx
-        # networks:
-        #     public_net:
-        #         ipv4_address: ${NGINX_IP}
+            context: ./flask-app
  
 networks:
     public_net:

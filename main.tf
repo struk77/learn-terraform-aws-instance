@@ -17,7 +17,6 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name   = "name"
-    # values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
     values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
   }
 
@@ -37,6 +36,6 @@ resource "aws_instance" "www-example" {
     command = "bash create-host.sh ${aws_instance.www-example.public_ip} >> ${aws_instance.www-example.id}.yml"
   }
   provisioner "local-exec" {
-    command = "sleep 10; ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu --private-key ~/.ssh/awskey.pem -i '${aws_instance.www-example.id}.yml'  provisioning/site.yml; sleep 20; rm -rf '${aws_instance.www-example.id}.yml'"
+    command = "sleep 20; ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu --private-key ~/.ssh/awskey.pem -i '${aws_instance.www-example.id}.yml'  provisioning/site.yml; sleep 20; rm -rf '${aws_instance.www-example.id}.yml'"
   }
 }
